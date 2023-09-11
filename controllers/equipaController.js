@@ -67,13 +67,22 @@ async function editEquipa(req, res){
 }
 
 async function editPost(req, res){
+
+    let imagem;
+
+    if(req.file){
+        imagem = req.file.filename;
+    } else {
+        let imageAntiga = await Equipamento.findById(req.params.id);
+        imagem = imageAntiga.image;
+    }
     
     try{
         await Equipamento.findByIdAndUpdate(req.params.id,{
             nome: req.body.nome,
             descricao: req.body.descricao,
             num_serie: req.body.num_serie,
-            image: req.file,
+            image: imagem,
             updatedAt: Date.now()
         }).where(req.params.id);
 
