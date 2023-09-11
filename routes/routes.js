@@ -10,5 +10,6 @@ router.post('/add', equipaController.postEquipa);
 
 router.get('/edit/:id', equipaController.editEquipa);
 router.put('/edit/:id', equipaController.editPost);
+router.delete('/edit/:id', equipaController.deleteEquipa);
 
 module.exports = router;

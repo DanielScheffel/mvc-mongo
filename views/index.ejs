@@ -21,7 +21,9 @@
             </p>
             <div class="d-flex justify-content-around">
                 <a href="/edit/<%= equip._id %>" type="button" class="btn btn-primary">Editar</a>
-                <a href="/delete/<%= equip._id %>" type="button" class="btn btn-danger">Deletar</a>
+                <form action="/edit/<%= equip._id %>?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-danger">Deletar</button>
+                </form>
             </div>
           </div>
         </div>

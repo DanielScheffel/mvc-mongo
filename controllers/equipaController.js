@@ -83,4 +83,14 @@ async function editPost(req, res){
     }
 }
 
-module.exports = { home, addEquipa, postEquipa, editEquipa, editPost }
+async function deleteEquipa(req, res){
+    
+    try{
+        await Equipamento.deleteOne({ _id: req.params.id});
+        res.redirect("/");
+    } catch (error){
+        console.log(error);
+    }
+}
+
+module.exports = { home, addEquipa, postEquipa, editEquipa, editPost, deleteEquipa }
