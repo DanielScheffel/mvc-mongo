@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Novo Equipamento</h1>
+    <div class="btn-toolbar mb-2 mb-md 0">
+        <div class="btn-group me-2">
+            <button class="btn btn-sm btn-outline-secondary">
+                ?
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="col py-3">
+
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Lista</a></li>
+                    <li class="breadcrumb-item active">Novo Equipamento</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="col text-end fw-lighter">
+            <b>EquipamentoId</b>
+        </div>
+    </div>
+
+</div>
+
+
+<form action="/add" method="POST">
+
+    <div class="row form grou mb-4">
+
+        <div class="col">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="" placeholder="Nome equipamento..." required >
+        </div>
+
+        <div class="col">
+            <label for="num_serie">Número de série</label>
+            <input type="text" class="form-control" id="num_serie" name="num_serie" value="" placeholder="Número de série..." required >
+        </div>
+
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="descricao">Descrição</label>
+        <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="12" placeholder="Descrição do equipamento..." required></textarea>
+    </div>
+
+    <div class="form-group mb-4">
+        <label for="image">Selecione uma Imagem</label>
+        <input type="file" name="image" id="image">
+    </div>
+
+    <div class="form-group mb-4">
+        <button type="submit" class="btn btn-primary">Add Equipamento</button>
+    </div>
+</form>

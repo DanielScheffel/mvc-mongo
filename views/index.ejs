@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Lista de Equipamentos</h1>
+
+    <div class="btn-toolbar mb-2 mb-md 0">
+        <div class="btn-group me-2">
+            <a href="/add" class="btn btn-sm btn-outline-secondary">+ Novo Equipamento</a>
+        </div>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 ms-3 mt-3">
+    <% equipas.forEach(function(equip) { %>
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= equip.nome %></h5>
+            <p class="card-text"><%= equip.descricao %></p>
+            <p class="card-text">
+              <small class="text-muted"><%= equip.num_serie %></small>
+            </p>
+            <div class="d-flex justify-content-around">
+                <a href="/edit/<%= equip._id %>" type="button" class="btn btn-primary">Editar</a>
+                <a href="/delete/<%= equip._id %>" type="button" class="btn btn-danger">Deletar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+  
