@@ -15,12 +15,12 @@ const router = express.Router();
 
 // const upload = multer({ storage }).single("image");
 
-// const equipaController = require('../controllers/equipaController');
+const equipaController = require('../controllers/equipaController');
 
 router.get('/', equipaController.home);
 
-router.get('/add', upload, equipaController.addEquipa);
-router.post('/add', upload, equipaController.postEquipa);
+router.get('/add', equipaController.addEquipa);
+router.post('/add', equipaController.postEquipa);
 
 router.get('/edit/:id', equipaController.editEquipa);
 router.put('/edit/:id', equipaController.editPost);
