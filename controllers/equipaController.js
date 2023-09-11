@@ -1,6 +1,5 @@
 const Equipamento = require('../models/Equipamento');
 const mongoose = require('mongoose');
-const fs = require('fs/promises');
 
 async function home(req, res){
     const locals = {
@@ -30,8 +29,8 @@ async function postEquipa(req, res){
 
         nome: req.body.nome,
         descricao: req.body.descricao,
-        num_serie: req.body.num_serie
-        // image: req.file.filename
+        num_serie: req.body.num_serie,
+        image: req.file.filename
 
     });
 
@@ -74,6 +73,7 @@ async function editPost(req, res){
             nome: req.body.nome,
             descricao: req.body.descricao,
             num_serie: req.body.num_serie,
+            image: req.file,
             updatedAt: Date.now()
         }).where(req.params.id);
 
